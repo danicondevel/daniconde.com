@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Holding Brand Identity — Daniconde + Escalia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --graphite: #353B3C;
+    --black-core: #0A0A0A;
+    --black-2: #111111;
+    --deep-panel: #2A2F30;
+    --teal: #2ED8CB;
+    --lime: #E7FE68;
+    --magenta: #F61067;
+    --emotional-red: #3A0B0B;
+    --white: #FFFFFF;
+    --grey-1: #CCCCCC;
+    --grey-2: #888888;
+    --light: #F5F7F6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--black-core);
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(46,216,203,0.15);
+    padding: 14px 40px;
+    display: flex; align-items: center; gap: 32px;
+    font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .nav a { color: var(--grey-1); text-decoration: none; transition: color 0.2s; }
+  .nav a:hover { color: var(--teal); }
+  .nav .brand { font-family: 'Raleway', sans-serif; font-weight: 700; color: var(--teal); font-size: 15px; letter-spacing: -0.02em; text-transform: none; }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 60px 80px; max-width: 1200px; margin: 0 auto; }
+  section:first-of-type { padding-top: 140px; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 12px; opacity: 0.8;
+  }
+
+  h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800; font-size: 56px; letter-spacing: -0.02em;
+    line-height: 1.1; margin-bottom: 24px;
+  }
+  h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700; font-size: 36px; letter-spacing: -0.02em;
+    line-height: 1.15; margin-bottom: 20px;
+  }
+  h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600; font-size: 22px; letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600; font-size: 16px; margin-bottom: 8px;
+    color: var(--grey-1);
+  }
+
+  p { max-width: 680px; color: var(--grey-1); margin-bottom: 16px; font-size: 16px; }
+  .lead { font-size: 20px; color: var(--white); font-weight: 400; line-height: 1.5; max-width: 720px; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 90vh; display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,216,203,0.08) 0%, transparent 70%);
+  }
+  .hero .version {
+    display: inline-block; padding: 6px 16px; border: 1px solid rgba(46,216,203,0.3);
+    border-radius: 100px; font-size: 13px; color: var(--teal); margin-bottom: 24px;
+    font-family: 'DM Mono', monospace;
+  }
+  .hero h1 { font-size: 64px; }
+  .hero h1 span { color: var(--teal); }
+  .hero-sub {
+    display: flex; gap: 40px; margin-top: 32px;
+    font-family: 'DM Mono', monospace; font-size: 13px; color: var(--grey-2);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px; background: linear-gradient(90deg, transparent, rgba(46,216,203,0.25), transparent);
+    margin: 0 60px;
+  }
+
+  /* ── COLOR SWATCHES ── */
+  .color-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; margin-top: 32px;
+  }
+  .swatch {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .swatch-color {
+    height: 120px; display: flex; align-items: flex-end; padding: 16px;
+    font-family: 'DM Mono', monospace; font-size: 14px;
+  }
+  .swatch-info {
+    padding: 16px; background: var(--black-2);
+  }
+  .swatch-info .name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .swatch-info .usage { font-size: 13px; color: var(--grey-2); }
+  .swatch-info .pct { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal); margin-top: 6px; }
+
+  /* ── CONTEXT TABLE ── */
+  .context-table {
+    width: 100%; border-collapse: collapse; margin-top: 32px;
+    font-size: 15px;
+  }
+  .context-table th {
+    text-align: left; padding: 14px 20px;
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--teal); border-bottom: 1px solid rgba(46,216,203,0.2);
+  }
+  .context-table td {
+    padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--grey-1); vertical-align: top;
+  }
+  .context-table tr:last-child td { border-bottom: none; }
+
+  /* ── TYPE SPECIMENS ── */
+  .type-specimen {
+    background: var(--black-2); border-radius: 20px; padding: 48px;
+    margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.04);
+  }
+  .type-specimen .font-label {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .type-specimen .weights {
+    display: flex; flex-wrap: wrap; gap: 24px; margin-top: 20px;
+  }
+  .type-specimen .weight-item {
+    font-size: 14px; color: var(--grey-2);
+  }
+  .type-specimen .weight-item span {
+    display: block; font-size: 32px; color: var(--white); margin-bottom: 4px;
+  }
+
+  .specimen-raleway .sample { font-family: 'Raleway', sans-serif; font-size: 48px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+  .specimen-dmsans .sample { font-family: 'DM Sans', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.5; }
+  .specimen-dmmono .sample { font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 400; line-height: 1.6; color: var(--teal); }
+
+  /* ── PILLS ── */
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 16px; border-radius: 100px; font-size: 13px;
+    font-family: 'DM Mono', monospace;
+  }
+  .pill-teal { border: 1px solid var(--teal); color: var(--teal); background: rgba(46,216,203,0.08); }
+  .pill-lime { border: 1px solid var(--lime); color: var(--lime); background: rgba(231,254,104,0.08); }
+  .pill-magenta { border: 1px solid var(--magenta); color: var(--magenta); background: rgba(246,16,103,0.08); }
+
+  /* ── CARDS ── */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-top: 32px; }
+  .card {
+    background: var(--black-2); border-radius: 20px; padding: 36px;
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: border-color 0.3s;
+  }
+  .card:hover { border-color: rgba(46,216,203,0.2); }
+  .card .icon { font-size: 32px; margin-bottom: 16px; }
+  .card p { font-size: 14px; }
+
+  /* ── SIDE BY SIDE ── */
+  .side-by-side {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;
+  }
+  .side-panel {
+    border-radius: 20px; padding: 40px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .side-panel h3 { margin-bottom: 16px; }
+  .side-panel ul { list-style: none; padding: 0; }
+  .side-panel li { padding: 8px 0; font-size: 14px; color: var(--grey-1); border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .side-panel li:last-child { border-bottom: none; }
+
+  /* ── MOTION TABLE ── */
+  .motion-row {
+    display: grid; grid-template-columns: 200px 1fr 160px 100px;
+    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 14px; align-items: center;
+  }
+  .motion-row.header {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal);
+    border-bottom: 1px solid rgba(46,216,203,0.2);
+  }
+  .motion-row .effect-name { font-weight: 600; color: var(--white); }
+  .motion-row .effect-use { color: var(--grey-2); }
+  .motion-row .effect-ease { color: var(--grey-1); font-family: 'DM Mono', monospace; font-size: 12px; }
+  .motion-row .effect-dur { color: var(--teal); font-family: 'DM Mono', monospace; }
+
+  /* ── VOICE BLOCK ── */
+  .voice-block {
+    background: var(--deep-panel); border-radius: 16px; padding: 32px;
+    margin: 16px 0; border-left: 3px solid var(--teal);
+    font-size: 18px; font-style: italic; color: var(--white);
+    line-height: 1.6; max-width: 700px;
+  }
+  .voice-block .attr {
+    font-style: normal; font-size: 13px; color: var(--grey-2);
+    margin-top: 12px; font-family: 'DM Mono', monospace;
+  }
+
+  /* ── DO / DON'T ── */
+  .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .do-col, .dont-col {
+    border-radius: 20px; padding: 36px;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .do-col { border-top: 3px solid var(--teal); }
+  .dont-col { border-top: 3px solid var(--magenta); }
+  .do-col h3 { color: var(--teal); }
+  .dont-col h3 { color: var(--magenta); }
+  .do-col li, .dont-col li { padding: 6px 0; font-size: 14px; color: var(--grey-1); }
+
+  /* ── CHECKLIST ── */
+  .checklist { list-style: none; padding: 0; margin-top: 24px; }
+  .checklist li {
+    padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 15px; display: flex; align-items: center; gap: 12px;
+  }
+  .checklist .check {
+    width: 24px; height: 24px; border-radius: 6px;
+    border: 2px solid var(--teal); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: var(--teal);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center; padding: 60px;
+    font-family: 'DM Mono', monospace; font-size: 12px; color: var(--grey-2);
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    .nav { display: none; }
+    section { padding: 40px 20px; page-break-inside: avoid; }
+    body { background: #0A0A0A; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 768px) {
+    section { padding: 60px 24px; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+    .hero h1 { font-size: 40px; }
+    .side-by-side, .do-dont { grid-template-columns: 1fr; }
+    .color-grid { grid-template-columns: repeat(2, 1fr); }
+    .motion-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <span class="brand">Holding OS</span>
+  <a href="#color">Color</a>
+  <a href="#tipografia">Tipo</a>
+  <a href="#contexto">Contexto</a>
+  <a href="#componentes">Componentes</a>
+  <a href="#motion">Motion</a>
+  <a href="#voz">Voz</a>
+  <a href="#reglas">Reglas</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="version">v1.0 · Mayo 2026 · Uso interno</span>
+  <h1>Identidad Visual<br/><span>del Holding</span></h1>
+  <p class="lead">Sistema visual unificado para <strong>Daniconde.com</strong> (marca personal, motor de audiencia) y <strong>Escalia</strong> (capacitación IA: workshops + corporativo). Un solo ADN, dos personalidades.</p>
+  <div class="hero-sub">
+    <span>Daniconde.com</span>
+    <span>Escalia</span>
+    <span>Documento maestro</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 01 — ARQUITECTURA -->
+<section>
+  <div class="section-label">01 · Arquitectura de marca</div>
+  <h2>Dos marcas, un sistema</h2>
+  <p>El holding tiene dos unidades con audiencias y personalidades distintas, pero comparten ADN visual y verbal. Daniconde genera audiencia, Escalia monetiza.</p>
+
+  <div class="side-by-side">
+    <div class="side-panel" style="background: var(--graphite);">
+      <h3 style="color: var(--lime);">Daniconde.com</h3>
+      <p style="font-size: 14px; color: var(--white); margin-bottom: 16px;">Marca personal · Motor de audiencia</p>
+      <ul>
+        <li><strong>Audiencia:</strong> Profesional individual en LATAM (Perfil 0)</li>
+        <li><strong>Canales:</strong> YouTube, Instagram, redes sociales</li>
+        <li><strong>Personalidad:</strong> Energético, visual, creador, directo</li>
+        <li><strong>Tagline:</strong> "IA para generar ingresos, ahorrar dinero y ser mas productivo"</li>
+        <li><strong>Fondo:</strong> Graphite #353B3C</li>
+        <li><strong>Acentos:</strong> Teal + Lime + Magenta</li>
+      </ul>
+    </div>
+    <div class="side-panel" style="background: var(--black-core); border: 1px solid rgba(46,216,203,0.15);">
+      <h3 style="color: var(--teal);">Escalia</h3>
+      <p style="font-size: 14px; color: var(--white); margin-bottom: 16px;">Capacitacion en IA · B2C + B2B</p>
+      <ul>
+        <li><strong>Audiencia:</strong> Profesionales (workshops $27) + Empresas (corporativo $1,200+)</li>
+        <li><strong>Canales:</strong> Web, propuestas, cold outreach, LinkedIn</li>
+        <li><strong>Personalidad:</strong> Corporativo, limpio, premium, con criterio</li>
+        <li><strong>Tagline:</strong> "La IA finalmente trabajando para ti"</li>
+        <li><strong>Fondo:</strong> Black Core #0A0A0A</li>
+        <li><strong>Acentos:</strong> Solo Teal + White</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top: 24px; font-size: 14px; color: var(--grey-2);">
+    <strong style="color: var(--teal);">Regla de flujo:</strong> Daniconde no vende directo → su CTA monetiza via Escalia. B2C genera confianza → recomienda Escalia → B2B implementa.
+  </p>
+</section>
+
+<div class="divider"></div>
+
+<!-- 02 — COLOR -->
+<section id="color">
+  <div class="section-label">02 · Sistema de color</div>
+  <h2>Paleta unificada</h2>
+  <p>El Teal es el ancla del holding — presente en ambas marcas. Lime y Magenta son exclusivos de Daniconde (contenido). Escalia se mantiene limpio: teal + blanco sobre negro.</p>
+
+  <div class="color-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--graphite); color: var(--white);">#353B3C</div>
+      <div class="swatch-info">
+        <div class="name">Graphite</div>
+        <div class="usage">Fondo principal Daniconde (video, animaciones, social)</div>
+        <div class="pct">~70% en contexto Daniconde</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--black-core); color: var(--grey-2); border-bottom: 1px solid rgba(255,255,255,0.06);">#0A0A0A</div>
+      <div class="swatch-info">
+        <div class="name">Black Core</div>
+        <div class="usage">Fondo principal Escalia (web, propuestas, presentaciones)</div>
+        <div class="pct">~70% en contexto Escalia</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--deep-panel); color: var(--grey-1);">#2A2F30</div>
+      <div class="swatch-info">
+        <div class="name">Deep Panel</div>
+        <div class="usage">Cards, paneles, capa de profundidad (ambas marcas)</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--teal); color: var(--black-core);">#2ED8CB</div>
+      <div class="swatch-info">
+        <div class="name">Teal</div>
+        <div class="usage">Accion, sistema, CTAs, confirmacion. Color ancla del holding</div>
+        <div class="pct">~14% · Ambas marcas</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--lime); color: var(--black-core);">#E7FE68</div>
+      <div class="swatch-info">
+        <div class="name">Lime</div>
+        <div class="usage">Highlights, conversion, datos monetarios. Solo Daniconde</div>
+        <div class="pct">~7% · Solo Daniconde</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--magenta); color: var(--white);">#F61067</div>
+      <div class="swatch-info">
+        <div class="name">Magenta</div>
+        <div class="usage">Alertas, IA, emocion, urgencia. Solo Daniconde</div>
+        <div class="pct">~5% · Solo Daniconde</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--emotional-red); color: var(--magenta);">#3A0B0B</div>
+      <div class="swatch-info">
+        <div class="name">Emotional Red</div>
+        <div class="usage">Solo cierres de impacto emocional en video</div>
+        <div class="pct">~4% · Solo cierres Daniconde</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--white); color: var(--black-core);">#FFFFFF</div>
+      <div class="swatch-info">
+        <div class="name">White</div>
+        <div class="usage">Texto principal, logotipos sobre fondo oscuro</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Context rules for color -->
+  <h3 style="margin-top: 48px;">Reglas de uso por contexto</h3>
+  <table class="context-table">
+    <thead>
+      <tr><th>Contexto</th><th>Fondo</th><th>Acentos</th><th>Nota</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Video / Animaciones</strong></td>
+        <td>Graphite #353B3C</td>
+        <td>Teal + Lime + Magenta</td>
+        <td>Paleta completa. Lime para dinero, Magenta para alertas/IA</td>
+      </tr>
+      <tr>
+        <td><strong>Instagram / Social</strong></td>
+        <td>Graphite o Black Core</td>
+        <td>Teal + Lime</td>
+        <td>Magenta solo para urgencia real</td>
+      </tr>
+      <tr>
+        <td><strong>Web Escalia</strong></td>
+        <td>Black Core #0A0A0A</td>
+        <td>Solo Teal + White</td>
+        <td>Nada de Lime ni Magenta — limpio y corporativo</td>
+      </tr>
+      <tr>
+        <td><strong>Propuestas B2B</strong></td>
+        <td>Black Core o White</td>
+        <td>Teal como acento</td>
+        <td>Minimalismo. Texto claro, datos en teal</td>
+      </tr>
+      <tr>
+        <td><strong>Decks / Presentaciones</strong></td>
+        <td>Cualquiera de los dos</td>
+        <td>Teal como ancla</td>
+        <td>Seleccionar por audiencia</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- 03 — TIPOGRAFIA -->
+<section id="tipografia">
+  <div class="section-label">03 · Tipografia</div>
+  <h2>Sistema tipografico</h2>
+  <p>Tres familias con roles claros. Consistentes en ambas marcas. Raleway para impacto, DM Sans para legibilidad, DM Mono para datos y etiquetas.</p>
+
+  <div class="type-specimen specimen-raleway">
+    <div class="font-label">Display · Raleway</div>
+    <div class="sample">La IA finalmente<br/>trabajando para ti.</div>
+    <div class="weights">
+      <div class="weight-item"><span style="font-family:'Raleway'; font-weight:300;">Aa</span>Light 300</div>
+      <div class="weight-item"><span style="font-family:'Raleway'; font-weight:400;">Aa</span>Regular 400</div>
+      <div class="weight-item"><span style="font-family:'Raleway'; font-weight:600;">Aa</span>SemiBold 600</div>
+      <div class="weight-item"><span style="font-family:'Raleway'; font-weight:700;">Aa</span>Bold 700</div>
+      <div class="weight-item"><span style="font-family:'Raleway'; font-weight:800;">Aa</span>ExtraBold 800</div>
+    </div>
+    <p style="margin-top: 16px; font-size: 13px; color: var(--grey-2);">
+      Letter-spacing: -0.02em · Tamanos: 88px (hero) · 56px (seccion) · 40px (H1) · 28px (H2)
+    </p>
+  </div>
+
+  <div class="type-specimen specimen-dmsans">
+    <div class="font-label">Body · DM Sans</div>
+    <div class="sample">Escalia convierte conceptos complejos en habilidades concretas: sin codigo, sin jerga tecnica y sin teoria vacia. Resultado primero, proceso despues.</div>
+    <div class="weights">
+      <div class="weight-item"><span style="font-family:'DM Sans'; font-weight:300;">Aa</span>Light 300</div>
+      <div class="weight-item"><span style="font-family:'DM Sans'; font-weight:400;">Aa</span>Regular 400</div>
+      <div class="weight-item"><span style="font-family:'DM Sans'; font-weight:500;">Aa</span>Medium 500</div>
+      <div class="weight-item"><span style="font-family:'DM Sans'; font-weight:600;">Aa</span>SemiBold 600</div>
+      <div class="weight-item"><span style="font-family:'DM Sans'; font-weight:700;">Aa</span>Bold 700</div>
+    </div>
+    <p style="margin-top: 16px; font-size: 13px; color: var(--grey-2);">
+      Tamanos: 20px (lead) · 16px (body) · 14px (small) · 13px (labels) · 11px (micro)
+    </p>
+  </div>
+
+  <div class="type-specimen specimen-dmmono">
+    <div class="font-label">Tecnica · DM Mono</div>
+    <div class="sample">v1.0 · 2026-05-25 · $1,200 USD · 30% ahorro · CRF 18</div>
+    <div class="weights">
+      <div class="weight-item"><span style="font-family:'DM Mono'; font-weight:400;">Aa</span>Regular 400</div>
+      <div class="weight-item"><span style="font-family:'DM Mono'; font-weight:500;">Aa</span>Medium 500</div>
+    </div>
+    <p style="margin-top: 16px; font-size: 13px; color: var(--grey-2);">
+      Solo para: tags, timestamps, metricas, datos, versiones, etiquetas tecnicas
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 04 — CONTEXTO DE USO -->
+<section id="contexto">
+  <div class="section-label">04 · Contexto de uso</div>
+  <h2>Cuando usar que</h2>
+  <p>Cada marca tiene su contexto. La regla es simple: Daniconde = contenido masivo, energia. Escalia = corporativo, premium, resultado.</p>
+
+  <table class="context-table">
+    <thead>
+      <tr><th>Elemento</th><th>Daniconde</th><th>Escalia</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Fondo</strong></td>
+        <td>Graphite #353B3C (mas calido, video)</td>
+        <td>Black Core #0A0A0A (mas serio, corporativo)</td>
+      </tr>
+      <tr>
+        <td><strong>Acentos</strong></td>
+        <td>Teal + Lime + Magenta (paleta completa)</td>
+        <td>Solo Teal + White (limpio)</td>
+      </tr>
+      <tr>
+        <td><strong>Tipografia Display</strong></td>
+        <td>Raleway 700-800 (bold, impacto)</td>
+        <td>Raleway 600-700 (elegante, contenido)</td>
+      </tr>
+      <tr>
+        <td><strong>Tono visual</strong></td>
+        <td>Energetico, dinamico, alta frecuencia</td>
+        <td>Premium, limpio, espaciado</td>
+      </tr>
+      <tr>
+        <td><strong>Superficies</strong></td>
+        <td>Blueprint grid opcional, rims metalicos sutiles</td>
+        <td>Clean/flat siempre, redes de nodos sutiles</td>
+      </tr>
+      <tr>
+        <td><strong>Logo</strong></td>
+        <td>Nombre/cara de Dani (marca personal)</td>
+        <td>Isotipo (red de nodos) + logotipo "Escalia"</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- 05 — COMPONENTES -->
+<section id="componentes">
+  <div class="section-label">05 · Componentes</div>
+  <h2>Elementos visuales</h2>
+
+  <h3 style="margin-top: 32px;">Pills / Tags</h3>
+  <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; margin-bottom: 32px;">
+    <span class="pill pill-teal">Sistema</span>
+    <span class="pill pill-teal">Confirmado</span>
+    <span class="pill pill-lime">$1,200 USD</span>
+    <span class="pill pill-lime">Ahorro 30%</span>
+    <span class="pill pill-magenta">Urgente</span>
+    <span class="pill pill-magenta">IA</span>
+  </div>
+
+  <h3>Cards de informacion</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Stat Blocks</h3>
+      <p>Numeros grandes en Raleway 700, leading 0.9. Color teal para metricas positivas, lime para monetarios, magenta para alertas.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📋</div>
+      <h3>Info Cards</h3>
+      <p>Fondo translucido 4% blanco, divisores dashed. Contenido estructurado con jerarquia clara.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔘</div>
+      <h3>Botones</h3>
+      <p>Tres niveles: solido teal (CTA primario), tintado (secundario), ghost/outline (terciario). Radio pill siempre.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3>Timelines</h3>
+      <p>Circulos outline, teal para completado, lime para conversion. Segmentos solidos entre nodos.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 48px;">Iconos</h3>
+  <div style="margin-top: 16px;">
+    <p>Stroke: 1.6-2px · Esquinas redondeadas · Contenedor translucido con borde (opcional) · Sin rellenos solidos · Escalas: 36, 56, 88, 128px</p>
+  </div>
+
+  <h3 style="margin-top: 48px;">Superficies permitidas</h3>
+  <div class="card-grid">
+    <div class="card" style="background: var(--graphite);">
+      <h4>Clean / Flat</h4>
+      <p>Modo por defecto. Sin grid, sin texturas. Ambas marcas.</p>
+    </div>
+    <div class="card" style="background: var(--deep-panel);">
+      <h4>Blueprint Grid</h4>
+      <p>Solo para escenas tecnicas en video (Daniconde). Grid sutil en opacidad baja.</p>
+    </div>
+    <div class="card" style="background: var(--emotional-red);">
+      <h4 style="color: var(--magenta);">Emotional Red</h4>
+      <p>Reservado SOLO para cierres de impacto en video. Nunca en Escalia.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 48px;">Elementos graficos de apoyo (Escalia)</h3>
+  <p>Redes de nodos sutiles · Lineas ascendentes · Curvas de crecimiento · Puntos conectados · Fondos oscuros con acento teal. El sistema debe sentirse tecnologico, pero humano y claro.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- 06 — MOTION -->
+<section id="motion">
+  <div class="section-label">06 · Motion design</div>
+  <h2>Animacion y movimiento</h2>
+  <p>Reglas de motion para animaciones de video (Daniconde) y micro-interacciones web (Escalia). Filosofia: "El metalico viene del rim sutil y la opacidad, no del blur."</p>
+
+  <div style="margin-top: 32px;">
+    <div class="motion-row header">
+      <span>Efecto</span>
+      <span>Aplicacion</span>
+      <span>Easing</span>
+      <span>Duracion</span>
+    </div>
+    <div class="motion-row">
+      <span class="effect-name">Slide + Fade</span>
+      <span class="effect-use">Entrada default (pills, texto, cards)</span>
+      <span class="effect-ease">cubic-bezier(.22,1,.36,1)</span>
+      <span class="effect-dur">600ms</span>
+    </div>
+    <div class="motion-row">
+      <span class="effect-name">Scale 0.96 → 1</span>
+      <span class="effect-use">Aparicion de iconos y elementos</span>
+      <span class="effect-ease">cubic-bezier(.4,0,.2,1)</span>
+      <span class="effect-dur">480ms</span>
+    </div>
+    <div class="motion-row">
+      <span class="effect-name">Word Reveal</span>
+      <span class="effect-use">Frases clave (staggered, una por una)</span>
+      <span class="effect-ease">ease-out</span>
+      <span class="effect-dur">80-120ms</span>
+    </div>
+    <div class="motion-row">
+      <span class="effect-name">Number Ramp</span>
+      <span class="effect-use">Stats contando hacia arriba</span>
+      <span class="effect-ease">ease-in</span>
+      <span class="effect-dur">2-8s</span>
+    </div>
+    <div class="motion-row">
+      <span class="effect-name">Cross-dissolve</span>
+      <span class="effect-use">Transiciones de superficie</span>
+      <span class="effect-ease">ease-out</span>
+      <span class="effect-dur">900ms</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 07 — VOZ Y TONO -->
+<section id="voz">
+  <div class="section-label">07 · Voz y tono</div>
+  <h2>Como hablamos</h2>
+  <p>Dos registros segun el canal. Mismo ADN: directo, calido, con criterio propio. Resultado primero. Sin humo.</p>
+
+  <div class="side-by-side" style="margin-top: 32px;">
+    <div class="side-panel" style="background: var(--graphite);">
+      <h3 style="color: var(--lime);">Registro Creador</h3>
+      <p style="font-size: 13px; color: var(--teal); font-family: 'DM Mono', monospace;">YouTube · Instagram · Redes</p>
+      <ul>
+        <li>Rapido, gancho primero, cero jerga</li>
+        <li>Resultado concreto: dinero, tiempo, ahorro</li>
+        <li>Le habla a UNA persona, no a una empresa</li>
+        <li>Energia alta, honestidad brutal</li>
+        <li>Un solo CTA suave (guardar, seguir, comentar)</li>
+        <li>Si no sirve, lo dices. Credibilidad = activo</li>
+      </ul>
+    </div>
+    <div class="side-panel" style="background: var(--black-2);">
+      <h3 style="color: var(--teal);">Registro Propuesta / B2B</h3>
+      <p style="font-size: 13px; color: var(--teal); font-family: 'DM Mono', monospace;">Cotizaciones · Propuestas · Cold outreach</p>
+      <ul>
+        <li>Calido, con criterio, estructura de persuasion formal</li>
+        <li>Empieza con la situacion del prospecto, no con nosotros</li>
+        <li>Numeros especificos como credibilidad</li>
+        <li>El trio de negaciones + afirmacion</li>
+        <li>Parrafos cortos, frase final que golpea</li>
+        <li>Un solo CTA al final, sin friccion</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 48px;">Patrones de escritura de Dani</h3>
+
+  <div class="voice-block">
+    "No teoria. No ejercicios de practica. Resultados reales, el mismo dia."
+    <div class="attr">Patron: El trio de negaciones → afirmacion</div>
+  </div>
+
+  <div class="voice-block">
+    "No soy un consultor que aprendio IA de libros. Soy el emprendedor que la construyo como negocio."
+    <div class="attr">Patron: Contraste de dos frases</div>
+  </div>
+
+  <div class="voice-block">
+    "Tu equipo ya usa ChatGPT. Pero siguen haciendo las mismas cosas de siempre, solo un poco mas rapido."
+    <div class="attr">Patron: Tension entre lo que creen tener y lo que realmente tienen</div>
+  </div>
+
+  <h3 style="margin-top: 48px;">Taglines oficiales</h3>
+  <table class="context-table">
+    <tbody>
+      <tr>
+        <td><strong>Dani Conde</strong></td>
+        <td>"IA para generar ingresos, ahorrar dinero y ser mas productivo"</td>
+      </tr>
+      <tr>
+        <td><strong>Escalia</strong></td>
+        <td>"La IA finalmente trabajando para ti"</td>
+      </tr>
+      <tr>
+        <td><strong>Escalia B2B</strong></td>
+        <td>"Laboratorio de Implementacion de IA para Empresas en LATAM"</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- 08 — LOGO ESCALIA -->
+<section>
+  <div class="section-label">08 · Logo Escalia</div>
+  <h2>Sistema de logo</h2>
+  <p>El logo de Escalia es exclusivo de Escalia. Daniconde usa su nombre/cara como marca personal. Nunca mezclar.</p>
+
+  <div class="card-grid" style="margin-top: 32px;">
+    <div class="card">
+      <h3>Logo completo (horizontal)</h3>
+      <p>Simbolo (red de nodos) + "Escalia". Uso principal en web, presentaciones, propuestas, portadas.</p>
+      <p style="font-size: 13px; color: var(--teal);">Uso principal: fondo oscuro, simbolo teal, logotipo blanco</p>
+    </div>
+    <div class="card">
+      <h3>Isotipo solo</h3>
+      <p>Solo el simbolo de red de nodos. Para foto de perfil, favicon, marca de agua, avatares.</p>
+      <p style="font-size: 13px; color: var(--teal);">Regla responsive: ≥120px = logo completo · &lt;120px = isotipo</p>
+    </div>
+    <div class="card">
+      <h3>El punto de la "i"</h3>
+      <p>El acento en la "i" de Escalia siempre va en teal (#2ED8CB). Es el conector visual entre simbolo y logotipo.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 48px;">Concepto del simbolo</h3>
+  <p>La red ascendente de nodos representa el metodo de Escalia: entender la IA → ejecutarla en tareas reales → escalar resultados.</p>
+  <div style="display: flex; gap: 24px; margin-top: 20px;">
+    <span class="pill pill-teal">01 Aprender</span>
+    <span class="pill pill-teal">02 Ejecutar</span>
+    <span class="pill pill-teal">03 Optimizar</span>
+    <span class="pill pill-teal">04 Escalar</span>
+  </div>
+
+  <h3 style="margin-top: 48px;">Identificadores secundarios</h3>
+  <table class="context-table">
+    <tbody>
+      <tr><td><strong>Escalia Academy</strong></td><td>Formacion estructurada y rutas de aprendizaje</td></tr>
+      <tr><td><strong>Escalia Workshops</strong></td><td>Talleres de bajo costo, practicos y accionables</td></tr>
+      <tr><td><strong>Escalia Labs</strong></td><td>Implementacion B2B, automatizacion y soluciones</td></tr>
+      <tr><td><strong>Escalia Empresas</strong></td><td>Comunicacion corporativa y propuestas B2B</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 12px; font-size: 13px; color: var(--grey-2);">Todos conservan: simbolo, tipografia Raleway, teal oficial y tono directo.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- 09 — REGLAS -->
+<section id="reglas">
+  <div class="section-label">09 · Reglas</div>
+  <h2>Lo que si y lo que no</h2>
+
+  <div class="do-dont">
+    <div class="do-col">
+      <h3>✓ Siempre</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>Resultado primero, proceso despues</li>
+        <li>Numeros concretos como credibilidad</li>
+        <li>Tutear siempre ("tu", nunca "usted")</li>
+        <li>Parrafos cortos: maximo 3 lineas</li>
+        <li>Un solo CTA al final</li>
+        <li>Usar el verde como acento, no como relleno</li>
+        <li>Mantener aire premium y limpio</li>
+        <li>Respetar la proporcion del logo</li>
+        <li>Sentirse tecnologico pero humano</li>
+        <li>Referenciar la reunion real en propuestas</li>
+      </ul>
+    </div>
+    <div class="dont-col">
+      <h3>✗ Nunca</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>"Somos una empresa lider en..." — cero self-promotion</li>
+        <li>"Disruptivo", "innovador", "robusto", "paradigma"</li>
+        <li>Jerga tecnica innecesaria (LLM, RAG, embeddings)</li>
+        <li>"La IA reemplaza personas"</li>
+        <li>Multiples CTAs o "contactame por cualquier medio"</li>
+        <li>Saturar con nodos, brillos o efectos</li>
+        <li>Parecer una app o dashboard generico</li>
+        <li>Deformar el logo o separar el punto de la "i"</li>
+        <li>Usar fondos con bajo contraste</li>
+        <li>Prometer sin sustento ("aumenta 10x tus ventas")</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 10 — CHECKLIST -->
+<section>
+  <div class="section-label">10 · Checklist</div>
+  <h2>Antes de publicar</h2>
+  <p>Validar estos puntos antes de entregar o publicar cualquier pieza del holding.</p>
+
+  <ul class="checklist">
+    <li><span class="check">☐</span> El logo esta legible y con suficiente aire alrededor</li>
+    <li><span class="check">☐</span> El teal #2ED8CB se usa como acento, no como relleno excesivo</li>
+    <li><span class="check">☐</span> La pieza comunica resultado primero y proceso despues</li>
+    <li><span class="check">☐</span> El tono suena directo, util y sin hype vacio</li>
+    <li><span class="check">☐</span> Se identifica claramente si es Daniconde o Escalia</li>
+    <li><span class="check">☐</span> No se mezclan los acentos exclusivos (Lime/Magenta no van en Escalia)</li>
+    <li><span class="check">☐</span> La pieza se entiende tanto en movil como en escritorio</li>
+    <li><span class="check">☐</span> Se evita parecer una app o dashboard de IA generico</li>
+    <li><span class="check">☐</span> La tipografia respeta la jerarquia (Raleway display, DM Sans body, DM Mono tecnico)</li>
+    <li><span class="check">☐</span> Los numeros son especificos, no vagos ("$1,200" no "mucho dinero")</li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Holding Brand Identity v1.0 · Mayo 2026 · Uso interno</p>
+  <p style="margin-top: 8px;">Daniconde.com + Escalia · Documento maestro</p>
+</div>
+
+</body>
+</html>
